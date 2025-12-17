@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>상담 · 코칭 초기 설문지</title>
+  <title>코칭 사전 설문지 (4회기/12회기 선택형)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="color-scheme" content="light">
   <style>
     :root {
       --bg-body: #f9fafb;
@@ -25,11 +25,7 @@
       --shadow-soft: 0 14px 35px rgba(15, 23, 42, 0.12);
     }
 
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -64,9 +60,7 @@
     }
 
     @media (min-width: 480px) {
-      .inner {
-        padding: 22px 20px 30px;
-      }
+      .inner { padding: 22px 20px 30px; }
     }
 
     header.hero {
@@ -108,23 +102,22 @@
     }
 
     header.hero h1 {
-      font-size: 1.35rem;
+      font-size: 1.22rem;
       margin: 0;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: -0.02em;
       color: #1f2937;
+      line-height: 1.25;
     }
 
     header.hero p {
-      margin: 6px 0 0;
+      margin: 8px 0 0;
       font-size: 0.87rem;
-      line-height: 1.5;
+      line-height: 1.55;
       color: var(--text-sub);
     }
 
-    header.hero p strong {
-      color: #4b5563;
-    }
+    header.hero p strong { color: #4b5563; }
 
     .badge-row {
       display: flex;
@@ -142,27 +135,11 @@
       color: #4b5563;
     }
 
-    .badge.blue {
-      border-color: rgba(37, 99, 235, 0.4);
-      background: rgba(219, 234, 254, 0.9);
-      color: #1d4ed8;
-    }
+    .badge.blue { border-color: rgba(37, 99, 235, 0.4); background: rgba(219, 234, 254, 0.9); color: #1d4ed8; }
+    .badge.purple { border-color: rgba(139, 92, 246, 0.4); background: rgba(237, 233, 254, 0.9); color: #7c3aed; }
+    .badge.yellow { border-color: rgba(250, 204, 21, 0.7); background: rgba(254, 243, 199, 0.9); color: #92400e; }
 
-    .badge.purple {
-      border-color: rgba(139, 92, 246, 0.4);
-      background: rgba(237, 233, 254, 0.9);
-      color: #7c3aed;
-    }
-
-    .badge.yellow {
-      border-color: rgba(250, 204, 21, 0.7);
-      background: rgba(254, 243, 199, 0.9);
-      color: #92400e;
-    }
-
-    form {
-      margin-top: 8px;
-    }
+    form { margin-top: 8px; }
 
     .section {
       margin-bottom: 18px;
@@ -196,24 +173,22 @@
       align-items: center;
       justify-content: center;
       font-size: 0.75rem;
-      font-weight: 700;
+      font-weight: 800;
       color: #1f2937;
       background: conic-gradient(from 120deg, #facc15, #2563eb, #8b5cf6, #facc15);
       box-shadow: 0 0 0 2px #fefce8;
+      flex-shrink: 0;
     }
 
     .section h2 {
       margin: 0;
       font-size: 0.98rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: -0.01em;
       color: #111827;
     }
 
-    .section-caption {
-      font-size: 0.75rem;
-      color: var(--text-sub);
-    }
+    .section-caption { font-size: 0.75rem; color: var(--text-sub); }
 
     .field-group {
       margin-top: 10px;
@@ -221,13 +196,8 @@
       border-top: 1px dashed rgba(148, 163, 184, 0.6);
     }
 
-    .field {
-      margin-bottom: 12px;
-    }
-
-    .field:last-child {
-      margin-bottom: 0;
-    }
+    .field { margin-bottom: 12px; }
+    .field:last-child { margin-bottom: 0; }
 
     .label-row {
       display: flex;
@@ -240,12 +210,12 @@
       font-size: 0.78rem;
       color: #6b7280;
       flex-shrink: 0;
-      min-width: 32px;
+      min-width: 56px;
     }
 
     label {
       font-size: 0.9rem;
-      font-weight: 500;
+      font-weight: 600;
       color: #111827;
       display: block;
     }
@@ -273,14 +243,9 @@
       transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
     }
 
-    textarea {
-      min-height: 74px;
-      resize: vertical;
-    }
+    textarea { min-height: 74px; resize: vertical; }
 
-    input:focus,
-    textarea:focus,
-    select:focus {
+    input:focus, textarea:focus, select:focus {
       outline: none;
       border-color: rgba(37, 99, 235, 0.85);
       box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.55),
@@ -298,9 +263,9 @@
 
     .option {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 7px;
-      padding: 5px 6px;
+      padding: 6px 6px;
       border-radius: 10px;
     }
 
@@ -309,64 +274,19 @@
       width: 16px;
       height: 16px;
       flex-shrink: 0;
+      margin-top: 2px;
       accent-color: #2563eb;
     }
 
-    .option span {
-      color: #374151;
-    }
+    .option span { color: #374151; line-height: 1.35; }
 
-    .badge-inline {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 2px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: rgba(249, 250, 251, 0.9);
-      font-size: 0.7rem;
-      color: #4b5563;
-      margin-left: 4px;
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 8px;
     }
-
-    .badge-inline.blue {
-      border-color: rgba(37, 99, 235, 0.55);
-      background: rgba(219, 234, 254, 0.9);
-      color: #1d4ed8;
-    }
-
-    .badge-inline.purple {
-      border-color: rgba(139, 92, 246, 0.55);
-      background: rgba(237, 233, 254, 0.92);
-      color: #7c3aed;
-    }
-
-    .badge-inline.yellow {
-      border-color: rgba(250, 204, 21, 0.7);
-      background: rgba(254, 243, 199, 0.9);
-      color: #92400e;
-    }
-
-    .subsection-note {
-      font-size: 0.78rem;
-      color: var(--text-sub);
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .subsection-note-icon {
-      width: 14px;
-      height: 14px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #facc15, #8b5cf6);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: #fefce8;
-      font-size: 0.6rem;
-      flex-shrink: 0;
+    @media (min-width: 640px) {
+      .mini-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
     }
 
     .footer-note {
@@ -379,9 +299,7 @@
       border: 1px solid rgba(148, 163, 184, 0.8);
     }
 
-    .footer-note strong {
-      color: #111827;
-    }
+    .footer-note strong { color: #111827; }
 
     .actions {
       margin-top: 18px;
@@ -395,7 +313,7 @@
       border-radius: 999px;
       padding: 11px 16px;
       font-size: 0.95rem;
-      font-weight: 600;
+      font-weight: 800;
       letter-spacing: 0.01em;
       cursor: pointer;
       width: 100%;
@@ -408,9 +326,7 @@
       gap: 6px;
     }
 
-    .btn-primary span.icon {
-      font-size: 1.1rem;
-    }
+    .btn-primary[disabled] { opacity: 0.7; cursor: not-allowed; box-shadow: none; }
 
     .btn-secondary {
       border-radius: 999px;
@@ -425,40 +341,32 @@
       gap: 6px;
     }
 
-    .btn-secondary span.icon {
-      font-size: 0.95rem;
-    }
-
     @media (min-width: 640px) {
-      .actions {
-        flex-direction: row;
-        justify-content: flex-end;
-      }
-      .btn-primary {
-        width: auto;
-        min-width: 150px;
-      }
-      .btn-secondary {
-        width: auto;
-      }
-      .footer-note {
-        font-size: 0.8rem;
-      }
+      .actions { flex-direction: row; justify-content: flex-end; }
+      .btn-primary { width: auto; min-width: 160px; }
+      .btn-secondary { width: auto; }
+      .footer-note { font-size: 0.8rem; }
     }
 
     @media (max-width: 375px) {
-      header.hero h1 {
-        font-size: 1.22rem;
-      }
-      .section h2 {
-        font-size: 0.94rem;
-      }
-      label {
-        font-size: 0.86rem;
-      }
-      .q-number {
-        min-width: 28px;
-      }
+      header.hero h1 { font-size: 1.14rem; }
+      .section h2 { font-size: 0.94rem; }
+      label { font-size: 0.86rem; }
+      .q-number { min-width: 52px; }
+    }
+
+    .is-hidden { display: none !important; }
+
+    .prog-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(255, 255, 255, 0.75);
+      font-size: 0.82rem;
+      color: #374151;
     }
   </style>
 </head>
@@ -470,24 +378,64 @@
           <div class="hero-title">
             <div class="pill">
               <span class="pill-dot"></span>
-              PRE · TALK FORM
+              COACHING · INTAKE
             </div>
-            <h1>상담 · 코칭 초기 설문지</h1>
+            <h1>코칭 사전 설문지<br>(4회기 / 12회기 선택형)</h1>
           </div>
           <p>
-            편하게 적어 주신 내용은 <strong>비밀이 보장</strong>되며,
-            앞으로의 대화를 더 안전하고 의미 있게 만드는 데 사용됩니다.
-            가능한 범위 안에서만 솔직하게 적어 주세요.
+            이 설문은 코칭을 더 정확하고 편안하게 시작하기 위한 <strong>사전 질문</strong>입니다.
+            가능한 범위에서만 작성해 주세요.
           </p>
           <div class="badge-row">
             <span class="badge yellow">일반인용</span>
-            <span class="badge blue">상담 · 코칭 공용</span>
-            <span class="badge purple">모바일 최적화</span>
+            <span class="badge blue">코칭 전용</span>
+            <span class="badge purple">선택형 분기</span>
           </div>
         </header>
 
-        <form>
-          <!-- 섹션 1. 기본 정보 -->
+        <form id="intakeForm" data-endpoint="YOUR_APPS_SCRIPT_WEBAPP_URL" novalidate>
+          <input type="hidden" name="timestamp" id="timestamp" />
+          <input type="hidden" name="submission_id" id="submission_id" />
+          <input type="hidden" name="page_url" id="page_url" />
+          <input type="hidden" name="program_type" id="program_type" value="" />
+
+          <!-- 0) 프로그램 선택 -->
+          <section class="section" aria-label="프로그램 선택">
+            <div class="section-title">
+              <div class="section-title-left">
+                <div class="section-index">0</div>
+                <h2>프로그램 선택</h2>
+              </div>
+              <div class="section-caption">선택에 따라 질문이 자동으로 달라집니다.</div>
+            </div>
+
+            <div class="field-group">
+              <div class="field">
+                <div class="label-row">
+                  <span class="q-number">P0-Q1</span>
+                  <label>원하시는 코칭 형태를 선택해 주세요.</label>
+                </div>
+                <p class="help">처음이시라면 “4회기(단기)”가 부담이 적습니다.</p>
+
+                <div class="option-group">
+                  <label class="option">
+                    <input type="radio" name="program_choice" value="4" />
+                    <span><strong>4회기(단기)</strong> · 목표 1개 집중, 빠른 실행/점검</span>
+                  </label>
+                  <label class="option">
+                    <input type="radio" name="program_choice" value="12" />
+                    <span><strong>12회기(장기)</strong> · 습관/시스템/정체성까지 확장</span>
+                  </label>
+                </div>
+
+                <div class="help" style="margin-top:8px">
+                  선택 후 아래 문항이 자동으로 표시됩니다.
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 1) 기본 정보(공통) -->
           <section class="section" aria-label="기본 정보">
             <div class="section-title">
               <div class="section-title-left">
@@ -500,680 +448,542 @@
             <div class="field-group">
               <div class="field">
                 <div class="label-row">
-                  <span class="q-number">Q1.</span>
-                  <label for="name">이름(실명 또는 닉네임)을 적어 주세요.</label>
+                  <span class="q-number">C-Q1</span>
+                  <label for="name">이름(실명 또는 닉네임)</label>
                 </div>
                 <input id="name" type="text" name="name" autocomplete="name" />
               </div>
 
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q2.</span>
-                  <label for="age">나이를 적어 주세요. (예: 29)</label>
+              <div class="mini-grid">
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">C-Q2</span>
+                    <label for="age">나이(선택)</label>
+                  </div>
+                  <input id="age" type="number" name="age" min="0" max="120" inputmode="numeric" placeholder="예: 29" />
                 </div>
-                <input id="age" type="number" inputmode="numeric" name="age" min="0" max="120" />
+
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">C-Q3</span>
+                    <label for="role">현재 역할(선택)</label>
+                  </div>
+                  <select id="role" name="role">
+                    <option value="">선택</option>
+                    <option value="office_worker">직장인</option>
+                    <option value="student">학생</option>
+                    <option value="freelancer">프리랜서</option>
+                    <option value="job_seeking">구직/이직 준비</option>
+                    <option value="homemaker">가정/돌봄</option>
+                    <option value="other">기타</option>
+                  </select>
+                </div>
               </div>
 
               <div class="field">
                 <div class="label-row">
-                  <span class="q-number">Q3.</span>
-                  <label for="role">현재 하고 계신 일이나 역할을 적어 주세요.</label>
+                  <span class="q-number">C-Q4</span>
+                  <label>연락 방법(선호 1개)</label>
                 </div>
-                <p class="help">예) 대학생 / 직장인 / 프리랜서 / 구직 중 / 전업주부 등</p>
-                <textarea id="role" name="role"></textarea>
-              </div>
-
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q4.</span>
-                  <label for="contact">연락 가능한 이메일 또는 휴대폰 번호를 적어 주세요.</label>
-                </div>
-                <input id="contact" type="text" name="contact" autocomplete="email tel" />
-              </div>
-
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q5.</span>
-                  <label>상담/코칭을 받으실 수 있는 주로 가능한 시간대에 체크해 주세요.</label>
-                </div>
-                <p class="help">복수 선택 가능</p>
                 <div class="option-group">
-                  <label class="option">
-                    <input type="checkbox" name="time-slot" value="weekday-morning" />
-                    <span>평일 오전</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="time-slot" value="weekday-afternoon" />
-                    <span>평일 오후</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="time-slot" value="weekday-evening" />
-                    <span>평일 저녁</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="time-slot" value="weekend-morning" />
-                    <span>주말 오전</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="time-slot" value="weekend-afternoon" />
-                    <span>주말 오후</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="time-slot" value="weekend-evening" />
-                    <span>주말 저녁</span>
-                  </label>
+                  <label class="option"><input type="radio" name="contact_pref" value="kakao" /><span>카카오톡</span></label>
+                  <label class="option"><input type="radio" name="contact_pref" value="email" /><span>이메일</span></label>
+                  <label class="option"><input type="radio" name="contact_pref" value="phone" /><span>전화</span></label>
                 </div>
+              </div>
+
+              <div class="field">
+                <div class="label-row">
+                  <span class="q-number">C-Q5</span>
+                  <label for="contact">연락처(이메일/휴대폰 등)</label>
+                </div>
+                <input id="contact" type="text" name="contact" autocomplete="email tel" placeholder="예: 이메일 또는 휴대폰 번호" />
+              </div>
+
+              <div class="mini-grid">
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">C-Q6</span>
+                    <label>진행 방식</label>
+                  </div>
+                  <div class="option-group">
+                    <label class="option"><input type="radio" name="format" value="online" /><span>온라인(화상)</span></label>
+                    <label class="option"><input type="radio" name="format" value="offline" /><span>오프라인(대면)</span></label>
+                    <label class="option"><input type="radio" name="format" value="both" /><span>둘 다 가능</span></label>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">C-Q7</span>
+                    <label>가능 시간대(복수)</label>
+                  </div>
+                  <div class="option-group">
+                    <label class="option"><input type="checkbox" name="time_slot" value="weekday_morning" /><span>평일 오전</span></label>
+                    <label class="option"><input type="checkbox" name="time_slot" value="weekday_afternoon" /><span>평일 오후</span></label>
+                    <label class="option"><input type="checkbox" name="time_slot" value="weekday_evening" /><span>평일 저녁</span></label>
+                    <label class="option"><input type="checkbox" name="time_slot" value="weekend_morning" /><span>주말 오전</span></label>
+                    <label class="option"><input type="checkbox" name="time_slot" value="weekend_afternoon" /><span>주말 오후</span></label>
+                    <label class="option"><input type="checkbox" name="time_slot" value="weekend_evening" /><span>주말 저녁</span></label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field">
+                <div class="label-row">
+                  <span class="q-number">C-Q8</span>
+                  <label for="ref">코칭을 알게 된 경로(선택)</label>
+                </div>
+                <select id="ref" name="ref">
+                  <option value="">선택</option>
+                  <option value="friend">지인 추천</option>
+                  <option value="content">콘텐츠(블로그/스레드/인스타 등)</option>
+                  <option value="search">검색</option>
+                  <option value="lecture">강의/행사</option>
+                  <option value="other">기타</option>
+                </select>
               </div>
             </div>
           </section>
 
-          <!-- 섹션 2. 현재 상태 & 주요 고민 -->
-          <section class="section" aria-label="현재 상태와 주요 고민">
+          <!-- 프로그램 미선택 안내 -->
+          <section class="section is-hidden" id="chooseProgramNotice" aria-label="프로그램 선택 안내">
             <div class="section-title">
               <div class="section-title-left">
-                <div class="section-index">2</div>
-                <h2>현재 상태 &amp; 주요 고민</h2>
+                <div class="section-index">!</div>
+                <h2>프로그램을 먼저 선택해 주세요</h2>
               </div>
-              <div class="section-caption">요즘 마음과 상황을 간단히 나눠 주세요.</div>
+              <div class="section-caption">위에서 4회기 또는 12회기를 선택하면 설문이 이어집니다.</div>
             </div>
-
             <div class="field-group">
               <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q6.</span>
-                  <label for="reason">
-                    이번 상담/코칭을 신청하게 된 가장 큰 이유는 무엇인가요?
-                  </label>
-                </div>
-                <textarea id="reason" name="reason"></textarea>
-              </div>
-
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q7.</span>
-                  <label for="concerns">
-                    요즘 가장 많이 떠오르는 고민이나 걱정을 1~3가지 정도 적어 주세요.
-                  </label>
-                </div>
-                <p class="help">예) 진로, 인간관계, 자존감, 번아웃, 감정조절, 일과 삶의 균형 등</p>
-                <textarea id="concerns" name="concerns"></textarea>
-              </div>
-
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q8.</span>
-                  <label>
-                    아래 중에서 현재 나에게 해당되는 것에 모두 체크해 주세요.
-                  </label>
-                </div>
-                <div class="option-group">
-                  <label class="option">
-                    <input type="checkbox" name="current-issues" value="career-direction" />
-                    <span>진로/커리어 방향이 막막하다</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="current-issues" value="work-study-stress" />
-                    <span>일/학업 스트레스로 지쳐 있다</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="current-issues" value="relationships" />
-                    <span>인간관계(가족, 연인, 친구, 동료 등)가 힘들다</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="current-issues" value="self-esteem" />
-                    <span>나 자신이 싫고, 자존감이 낮다고 느낀다</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="current-issues" value="mood" />
-                    <span>감정 기복이 심하거나 쉽게 무기력해진다</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="current-issues" value="execution" />
-                    <span>목표는 있는데 실행이 잘 안 된다</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="current-issues" value="life-direction" />
-                    <span>인생 전반의 방향을 정리하고 싶다</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="current-issues" value="just-talk" />
-                    <span>그냥 누군가에게 편하게 이야기 나누고 싶다</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="current-issues" value="other" />
-                    <span>기타 (직접 입력)</span>
-                  </label>
-                  <textarea name="current-issues-other" placeholder="기타 내용이 있다면 적어 주세요."></textarea>
-                </div>
-              </div>
-
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q9.</span>
-                  <label for="life-satisfaction">
-                    요즘 전반적인 삶의 만족도를 0~10점 사이 숫자로 적어 주세요.
-                  </label>
-                </div>
-                <p class="help">0점(매우 불만족) ~ 10점(매우 만족)</p>
-                <input id="life-satisfaction" type="number" name="life-satisfaction" min="0" max="10" inputmode="numeric" />
-              </div>
-
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q10.</span>
-                  <label for="stress-level">
-                    요즘 전반적인 스트레스 수준을 0~10점 사이 숫자로 적어 주세요.
-                  </label>
-                </div>
-                <p class="help">0점(거의 없음) ~ 10점(매우 심함)</p>
-                <input id="stress-level" type="number" name="stress-level" min="0" max="10" inputmode="numeric" />
+                <span class="prog-chip">Tip</span>
+                <span style="font-size:0.86rem;color:#4b5563;margin-left:8px">선택 후 아래 문항이 자동 표시됩니다.</span>
               </div>
             </div>
           </section>
 
-          <!-- 섹션 3. 상담/코칭의 목표 -->
-          <section class="section" aria-label="상담 코칭의 목표">
-            <div class="section-title">
-              <div class="section-title-left">
-                <div class="section-index">3</div>
-                <h2>상담/코칭의 목표</h2>
-              </div>
-              <div class="section-caption">이 시간을 통해 얻고 싶은 것들을 정리해 봅니다.</div>
-            </div>
-
-            <div class="field-group">
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q11.</span>
-                  <label for="goal-main">
-                    이번 상담/코칭을 통해 얻고 싶은 것은 무엇인가요?
-                  </label>
+          <!-- ========================= -->
+          <!-- 4회기용(단기) -->
+          <!-- ========================= -->
+          <div id="program4" class="is-hidden" data-program="4">
+            <section class="section" aria-label="4회기 목표">
+              <div class="section-title">
+                <div class="section-title-left">
+                  <div class="section-index">4</div>
+                  <h2>4회기 목표(단기 집중)</h2>
                 </div>
-                <textarea id="goal-main" name="goal-main"></textarea>
+                <div class="section-caption">이번 기간에 “딱 한 가지 변화”에 집중합니다.</div>
               </div>
 
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q12.</span>
-                  <label for="goal-3month">
-                    3개월 뒤를 떠올렸을 때, “상담/코칭을 잘 받았다”고 느끼려면 내 삶에서 어떤 변화가 있으면 좋겠나요?
-                  </label>
+              <div class="field-group">
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P4-Q1</span>
+                    <label for="p4_goal_one">4회기 안에 가장 바꾸고 싶은 “한 가지”는 무엇인가요?</label>
+                  </div>
+                  <p class="help">예: 미루는 습관 줄이기 / 업무 우선순위 확립 / 주 3회 운동 시작</p>
+                  <textarea id="p4_goal_one" name="p4_goal_one" placeholder="2~4줄 정도로 적어 주세요."></textarea>
                 </div>
-                <textarea id="goal-3month" name="goal-3month"></textarea>
+
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P4-Q2</span>
+                    <label for="p4_success_signals">성공했다고 느낄 ‘확인 신호(지표)’ 1~2개를 적어 주세요.</label>
+                  </div>
+                  <p class="help">예: “주 3회 30분 운동” / “마감 하루 전 초안 완료”</p>
+                  <textarea id="p4_success_signals" name="p4_success_signals" placeholder="측정 가능한 문장으로 적어 주세요."></textarea>
+                </div>
+
+                <div class="mini-grid">
+                  <div class="field">
+                    <div class="label-row">
+                      <span class="q-number">P4-Q3</span>
+                      <label for="p4_baseline">현재 점수(0~10)</label>
+                    </div>
+                    <input id="p4_baseline" type="number" name="p4_baseline" min="0" max="10" inputmode="numeric" placeholder="0~10" />
+                  </div>
+
+                  <div class="field">
+                    <div class="label-row">
+                      <span class="q-number">P4-Q4</span>
+                      <label for="p4_importance">중요도(0~10)</label>
+                    </div>
+                    <input id="p4_importance" type="number" name="p4_importance" min="0" max="10" inputmode="numeric" placeholder="0~10" />
+                  </div>
+
+                  <div class="field">
+                    <div class="label-row">
+                      <span class="q-number">P4-Q5</span>
+                      <label for="p4_commitment">실행 의지(0~10)</label>
+                    </div>
+                    <input id="p4_commitment" type="number" name="p4_commitment" min="0" max="10" inputmode="numeric" placeholder="0~10" />
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="section" aria-label="4회기 현실과 장애물">
+              <div class="section-title">
+                <div class="section-title-left">
+                  <div class="section-index">5</div>
+                  <h2>현실 &amp; 장애물</h2>
+                </div>
+                <div class="section-caption">현재 막는 요소를 최소한으로 파악합니다.</div>
               </div>
 
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q13.</span>
-                  <label>
-                    이번 상담/코칭에서 특히 다루고 싶은 영역에 체크해 주세요.
-                  </label>
+              <div class="field-group">
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P4-Q6</span>
+                    <label>가장 큰 장애물 1~2개를 선택해 주세요.</label>
+                  </div>
+                  <div class="option-group">
+                    <label class="option"><input type="checkbox" name="p4_obstacles" value="time" /><span>시간 부족</span></label>
+                    <label class="option"><input type="checkbox" name="p4_obstacles" value="energy" /><span>에너지/체력 부족</span></label>
+                    <label class="option"><input type="checkbox" name="p4_obstacles" value="priority" /><span>우선순위 혼란</span></label>
+                    <label class="option"><input type="checkbox" name="p4_obstacles" value="procrastination" /><span>미루기/회피</span></label>
+                    <label class="option"><input type="checkbox" name="p4_obstacles" value="fear" /><span>두려움/불안(실패 걱정 등)</span></label>
+                    <label class="option"><input type="checkbox" name="p4_obstacles" value="environment" /><span>환경(업무/가정/일정 등)</span></label>
+                    <label class="option"><input type="checkbox" name="p4_obstacles" value="other" id="p4_obstacles_other_toggle" /><span>기타(직접 입력)</span></label>
+                  </div>
+                  <textarea id="p4_obstacles_other" name="p4_obstacles_other" class="is-hidden" placeholder="기타 내용을 적어 주세요."></textarea>
                 </div>
-                <p class="help">복수 선택 가능</p>
-                <div class="option-group">
-                  <label class="option">
-                    <input type="checkbox" name="focus-area" value="career" />
-                    <span>진로/커리어 방향 찾기</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="focus-area" value="performance" />
-                    <span>일·학업 성과 및 동기</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="focus-area" value="emotion-stress" />
-                    <span>감정·스트레스 관리</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="focus-area" value="self-understanding" />
-                    <span>자기이해(성격/강점/가치관 등)</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="focus-area" value="relationships" />
-                    <span>인간관계 개선</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="focus-area" value="balance" />
-                    <span>삶의 균형(워라밸, 휴식, 취미 등)</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="focus-area" value="habits" />
-                    <span>습관 형성/실행력 향상</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="focus-area" value="life-direction" />
-                    <span>전반적인 삶의 방향 재정비</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="focus-area" value="other" />
-                    <span>기타 (직접 입력)</span>
-                  </label>
-                  <textarea name="focus-area-other" placeholder="기타 내용이 있다면 적어 주세요."></textarea>
+
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P4-Q7</span>
+                    <label for="p4_attempts">이미 시도해본 것이 있다면, 무엇을 해봤고 왜 지속이 어려웠나요?</label>
+                  </div>
+                  <textarea id="p4_attempts" name="p4_attempts" placeholder="짧게 적어 주세요."></textarea>
+                </div>
+
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P4-Q8</span>
+                    <label>이번 코칭에서 원하는 진행 방식(복수 선택)</label>
+                  </div>
+                  <div class="option-group">
+                    <label class="option"><input type="checkbox" name="p4_style" value="question" /><span>질문 중심으로 정리하고 싶다</span></label>
+                    <label class="option"><input type="checkbox" name="p4_style" value="structure" /><span>계획/우선순위를 구조화하고 싶다</span></label>
+                    <label class="option"><input type="checkbox" name="p4_style" value="feedback" /><span>솔직한 피드백(직설)도 괜찮다</span></label>
+                    <label class="option"><input type="checkbox" name="p4_style" value="task" /><span>실행 과제를 함께 설계하고 싶다</span></label>
+                    <label class="option"><input type="checkbox" name="p4_style" value="checkin" /><span>점검(리마인드/체크)이 필요하다</span></label>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P4-Q9</span>
+                    <label for="p4_avoid">코칭에서 다루기 싫은 주제/방식이 있다면 적어 주세요(선택).</label>
+                  </div>
+                  <textarea id="p4_avoid" name="p4_avoid" placeholder="없으면 비워도 됩니다."></textarea>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
 
-          <!-- 섹션 4. 이전 상담/코칭 경험 -->
-          <section class="section" aria-label="이전 상담 코칭 경험">
-            <div class="section-title">
-              <div class="section-title-left">
-                <div class="section-index">4</div>
-                <h2>이전 상담/코칭 경험</h2>
-              </div>
-              <div class="section-caption">이미 받으신 경험이 있다면 참고 정보로만 사용됩니다.</div>
-            </div>
-
-            <div class="field-group">
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q14.</span>
-                  <label>이전에 상담(심리상담, 정신건강의학과 등)이나 코칭(라이프코칭, 커리어코칭 등)을 받은 적이 있나요?</label>
+            <section class="section" aria-label="4회기 안전 확인">
+              <div class="section-title">
+                <div class="section-title-left">
+                  <div class="section-index">6</div>
+                  <h2>안전 확인</h2>
                 </div>
-                <div class="option-group">
-                  <label class="option">
-                    <input type="radio" name="prev-experience" value="yes" />
-                    <span>있다</span>
-                  </label>
-                  <label class="option">
-                    <input type="radio" name="prev-experience" value="no" />
-                    <span>없다</span>
-                  </label>
-                </div>
+                <div class="section-caption">안전한 진행을 위한 최소 확인입니다.</div>
               </div>
 
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q15.</span>
-                  <label for="prev-help">
-                    (선택) Q14에서 “있다”를 선택하신 분만 작성해 주세요. 어떤 종류의 상담/코칭이었고, 어떤 점이 도움이 되었나요?
-                  </label>
+              <div class="field-group">
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P4-Q10</span>
+                    <label>현재 상태에 가장 가까운 것을 선택해 주세요.</label>
+                  </div>
+                  <div class="option-group">
+                    <label class="option"><input type="radio" name="p4_safety" value="crisis" /><span>지금은 위기라 전문적인 즉각 도움이 필요하다고 느낀다</span></label>
+                    <label class="option"><input type="radio" name="p4_safety" value="support" /><span>위기는 아니지만 심리적 지원이 필요하다고 느낀다</span></label>
+                    <label class="option"><input type="radio" name="p4_safety" value="ok" /><span>특별한 위기는 없다</span></label>
+                  </div>
                 </div>
-                <textarea id="prev-help" name="prev-help" placeholder="해당되는 경우에만 적어 주세요."></textarea>
+              </div>
+            </section>
+          </div>
+
+          <!-- ========================= -->
+          <!-- 12회기용(장기) -->
+          <!-- ========================= -->
+          <div id="program12" class="is-hidden" data-program="12">
+            <section class="section" aria-label="12회기 목표">
+              <div class="section-title">
+                <div class="section-title-left">
+                  <div class="section-index">7</div>
+                  <h2>12회기 목표(장기 성장)</h2>
+                </div>
+                <div class="section-caption">습관·시스템·정체성까지 다룰 수 있습니다.</div>
               </div>
 
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q16.</span>
-                  <label for="prev-regret">
-                    (선택) Q14에서 “있다”를 선택하신 분만 작성해 주세요. 이전 상담/코칭에서 아쉬웠던 점이나 피하고 싶은 방식이 있다면 적어 주세요.
-                  </label>
+              <div class="field-group">
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P12-Q1</span>
+                    <label for="p12_goal1">12회기 동안 이루고 싶은 핵심 목표(1개)를 적어 주세요.</label>
+                  </div>
+                  <p class="help">예: “업무 성과를 안정적으로 유지하는 시스템 만들기”</p>
+                  <textarea id="p12_goal1" name="p12_goal1" placeholder="3~5줄 정도로 적어 주세요."></textarea>
                 </div>
-                <textarea id="prev-regret" name="prev-regret" placeholder="해당되는 경우에만 적어 주세요."></textarea>
-              </div>
-            </div>
-          </section>
 
-          <!-- 섹션 5. 일상, 관계, 지원 체계 -->
-          <section class="section" aria-label="일상과 관계 및 지원 체계">
-            <div class="section-title">
-              <div class="section-title-left">
-                <div class="section-index">5</div>
-                <h2>일상, 관계 &amp; 나를 지켜주는 것들</h2>
-              </div>
-              <div class="section-caption">지금의 환경을 이해하는 데 도움이 됩니다.</div>
-            </div>
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P12-Q2</span>
+                    <label for="p12_goal2">추가로 다루고 싶은 목표가 있다면(선택)</label>
+                  </div>
+                  <textarea id="p12_goal2" name="p12_goal2" placeholder="없으면 비워도 됩니다."></textarea>
+                </div>
 
-            <div class="field-group">
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q17.</span>
-                  <label>현재 함께 살고 있는 가족이나 동거인이 있나요?</label>
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P12-Q3</span>
+                    <label for="p12_metrics">목표 달성의 확인 신호(지표) 2~3개</label>
+                  </div>
+                  <p class="help">예: “주 4회 운동”, “회의 준비 24시간 전 완료”, “일일 루틴 유지율 80%”</p>
+                  <textarea id="p12_metrics" name="p12_metrics" placeholder="측정 가능한 문장으로 적어 주세요."></textarea>
                 </div>
-                <div class="option-group">
-                  <label class="option">
-                    <input type="radio" name="living" value="alone" />
-                    <span>혼자 산다</span>
-                  </label>
-                  <label class="option">
-                    <input type="radio" name="living" value="family" />
-                    <span>가족과 함께 산다</span>
-                  </label>
-                  <label class="option">
-                    <input type="radio" name="living" value="other" />
-                    <span>기타</span>
-                  </label>
-                </div>
-                <textarea name="living-other" placeholder="‘기타’를 선택하신 경우 적어 주세요."></textarea>
-              </div>
 
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q18.</span>
-                  <label>평소 힘들 때 이야기 나눌 수 있는 사람이 있나요?</label>
+                <div class="mini-grid">
+                  <div class="field">
+                    <div class="label-row">
+                      <span class="q-number">P12-Q4</span>
+                      <label for="p12_baseline">현재 점수(0~10)</label>
+                    </div>
+                    <input id="p12_baseline" type="number" name="p12_baseline" min="0" max="10" inputmode="numeric" placeholder="0~10" />
+                  </div>
+
+                  <div class="field">
+                    <div class="label-row">
+                      <span class="q-number">P12-Q5</span>
+                      <label for="p12_importance">중요도(0~10)</label>
+                    </div>
+                    <input id="p12_importance" type="number" name="p12_importance" min="0" max="10" inputmode="numeric" placeholder="0~10" />
+                  </div>
+
+                  <div class="field">
+                    <div class="label-row">
+                      <span class="q-number">P12-Q6</span>
+                      <label for="p12_commitment">실행 의지(0~10)</label>
+                    </div>
+                    <input id="p12_commitment" type="number" name="p12_commitment" min="0" max="10" inputmode="numeric" placeholder="0~10" />
+                  </div>
                 </div>
-                <p class="help">복수 선택 가능</p>
-                <div class="option-group">
-                  <label class="option">
-                    <input type="checkbox" name="support" value="family" />
-                    <span>가족</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="support" value="friends" />
-                    <span>친구</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="support" value="partner" />
-                    <span>연인</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="support" value="colleagues" />
-                    <span>직장·학교 동료</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="support" value="religion" />
-                    <span>종교 공동체(교회, 성당, 절 등)</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="support" value="none" />
-                    <span>거의 없다</span>
-                  </label>
+
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P12-Q7</span>
+                    <label for="p12_why">이 목표가 중요한 이유(가치/의미)를 적어 주세요.</label>
+                  </div>
+                  <textarea id="p12_why" name="p12_why" placeholder="2~4줄 정도로 적어 주세요."></textarea>
                 </div>
+              </div>
+            </section>
+
+            <section class="section" aria-label="12회기 패턴과 환경">
+              <div class="section-title">
+                <div class="section-title-left">
+                  <div class="section-index">8</div>
+                  <h2>패턴 &amp; 환경</h2>
+                </div>
+                <div class="section-caption">장기 변화의 ‘반복 패턴’을 확인합니다.</div>
               </div>
 
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q19.</span>
-                  <label for="daily-routine">
-                    요즘 평균적인 하루 일과를 간단히 적어 주세요.
-                  </label>
+              <div class="field-group">
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P12-Q8</span>
+                    <label>자주 걸리는 방해 패턴(복수 선택)</label>
+                  </div>
+                  <div class="option-group">
+                    <label class="option"><input type="checkbox" name="p12_patterns" value="perfectionism" /><span>완벽주의</span></label>
+                    <label class="option"><input type="checkbox" name="p12_patterns" value="avoidance" /><span>회피/미루기</span></label>
+                    <label class="option"><input type="checkbox" name="p12_patterns" value="overthinking" /><span>과도한 생각</span></label>
+                    <label class="option"><input type="checkbox" name="p12_patterns" value="selfcriticism" /><span>자기비난/죄책감</span></label>
+                    <label class="option"><input type="checkbox" name="p12_patterns" value="distracted" /><span>산만(스마트폰/멀티태스킹 등)</span></label>
+                    <label class="option"><input type="checkbox" name="p12_patterns" value="emotion" /><span>감정 기복으로 흐트러짐</span></label>
+                    <label class="option"><input type="checkbox" name="p12_patterns" value="other" id="p12_patterns_other_toggle" /><span>기타(직접 입력)</span></label>
+                  </div>
+                  <textarea id="p12_patterns_other" name="p12_patterns_other" class="is-hidden" placeholder="기타 내용을 적어 주세요."></textarea>
                 </div>
-                <p class="help">예) 몇 시에 일어나서 무엇을 하는지 대략적으로</p>
-                <textarea id="daily-routine" name="daily-routine"></textarea>
+
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P12-Q9</span>
+                    <label>환경 요인(복수 선택)</label>
+                  </div>
+                  <div class="option-group">
+                    <label class="option"><input type="checkbox" name="p12_environment" value="schedule" /><span>일정/업무 강도</span></label>
+                    <label class="option"><input type="checkbox" name="p12_environment" value="family" /><span>가정/돌봄 요구</span></label>
+                    <label class="option"><input type="checkbox" name="p12_environment" value="organization" /><span>조직/관계 구조</span></label>
+                    <label class="option"><input type="checkbox" name="p12_environment" value="health" /><span>건강/체력</span></label>
+                    <label class="option"><input type="checkbox" name="p12_environment" value="finance" /><span>경제/자원</span></label>
+                    <label class="option"><input type="checkbox" name="p12_environment" value="other" id="p12_environment_other_toggle" /><span>기타(직접 입력)</span></label>
+                  </div>
+                  <textarea id="p12_environment_other" name="p12_environment_other" class="is-hidden" placeholder="기타 내용을 적어 주세요."></textarea>
+                </div>
+
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P12-Q10</span>
+                    <label>현재 도움이 되는 자원(복수 선택)</label>
+                  </div>
+                  <div class="option-group">
+                    <label class="option"><input type="checkbox" name="p12_resources" value="supporter" /><span>지지자(가족/친구/동료 등)</span></label>
+                    <label class="option"><input type="checkbox" name="p12_resources" value="time" /><span>시간 확보</span></label>
+                    <label class="option"><input type="checkbox" name="p12_resources" value="money" /><span>경제 여력</span></label>
+                    <label class="option"><input type="checkbox" name="p12_resources" value="skills" /><span>지식/기술/역량</span></label>
+                    <label class="option"><input type="checkbox" name="p12_resources" value="health" /><span>체력/건강</span></label>
+                    <label class="option"><input type="checkbox" name="p12_resources" value="values" /><span>가치/신념/신앙 등</span></label>
+                    <label class="option"><input type="checkbox" name="p12_resources" value="other" id="p12_resources_other_toggle" /><span>기타(직접 입력)</span></label>
+                  </div>
+                  <textarea id="p12_resources_other" name="p12_resources_other" class="is-hidden" placeholder="기타 내용을 적어 주세요."></textarea>
+                </div>
+
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P12-Q11</span>
+                    <label for="p12_routine">평소 하루/일주일 루틴(대략)</label>
+                  </div>
+                  <textarea id="p12_routine" name="p12_routine" placeholder="예: 기상/출근/업무/운동/휴식 등 흐름을 간단히"></textarea>
+                </div>
+
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P12-Q12</span>
+                    <label for="p12_attempts">이미 시도해본 변화 노력 + 막혔던 지점</label>
+                  </div>
+                  <textarea id="p12_attempts" name="p12_attempts" placeholder="짧게 적어 주세요."></textarea>
+                </div>
+              </div>
+            </section>
+
+            <section class="section" aria-label="12회기 로드맵">
+              <div class="section-title">
+                <div class="section-title-left">
+                  <div class="section-index">9</div>
+                  <h2>로드맵(중간 목표)</h2>
+                </div>
+                <div class="section-caption">중간 단계 목표를 먼저 잡으면 지속이 쉬워집니다.</div>
               </div>
 
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q20.</span>
-                  <label for="resources">
-                    현재 생활에서 나에게 힘이 되거나, 버티게 해 주는 것이 있다면 무엇인가요?
-                  </label>
+              <div class="field-group">
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P12-Q13</span>
+                    <label for="p12_m4">4주 안에 만들고 싶은 변화</label>
+                  </div>
+                  <textarea id="p12_m4" name="p12_m4"></textarea>
                 </div>
-                <p class="help">예) 취미, 사람, 신앙, 가치관, 목표 등</p>
-                <textarea id="resources" name="resources"></textarea>
-              </div>
-            </div>
-          </section>
 
-          <!-- 섹션 6. 자기이해 & 강점 인식 -->
-          <section class="section" aria-label="자기이해와 강점 인식">
-            <div class="section-title">
-              <div class="section-title-left">
-                <div class="section-index">6</div>
-                <h2>나에 대한 이해 &amp; 강점</h2>
-              </div>
-              <div class="section-caption">자기이해 수준을 함께 살펴보기 위한 문항입니다.</div>
-            </div>
-
-            <div class="field-group">
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q21.</span>
-                  <label for="strengths">
-                    본인이 생각하는 자신의 장점이나 강점을 1~3가지 정도 적어 주세요.
-                  </label>
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P12-Q14</span>
+                    <label for="p12_m8">8주 안에 만들고 싶은 변화</label>
+                  </div>
+                  <textarea id="p12_m8" name="p12_m8"></textarea>
                 </div>
-                <textarea id="strengths" name="strengths"></textarea>
-              </div>
 
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q22.</span>
-                  <label for="improve">
-                    본인이 생각하는 보완하고 싶은 점을 1~3가지 정도 적어 주세요.
-                  </label>
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P12-Q15</span>
+                    <label for="p12_m12">12주 안에 만들고 싶은 변화</label>
+                  </div>
+                  <textarea id="p12_m12" name="p12_m12"></textarea>
                 </div>
-                <textarea id="improve" name="improve"></textarea>
-              </div>
 
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q23.</span>
-                  <label for="others-view">
-                    주변 사람들이 나를 어떤 사람이라고 자주 말하는지 적어 주세요.
-                  </label>
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P12-Q16</span>
+                    <label>코치에게 원하는 역할(복수 선택)</label>
+                  </div>
+                  <div class="option-group">
+                    <label class="option"><input type="checkbox" name="p12_coach_role" value="question" /><span>질문으로 사고를 확장</span></label>
+                    <label class="option"><input type="checkbox" name="p12_coach_role" value="structure" /><span>계획/우선순위 구조화</span></label>
+                    <label class="option"><input type="checkbox" name="p12_coach_role" value="feedback" /><span>솔직한 피드백</span></label>
+                    <label class="option"><input type="checkbox" name="p12_coach_role" value="habit" /><span>습관/환경 설계</span></label>
+                    <label class="option"><input type="checkbox" name="p12_coach_role" value="accountability" /><span>점검/책임 파트너</span></label>
+                  </div>
                 </div>
-                <p class="help">예) 차분하다, 에너지가 많다, 생각이 많다 등</p>
-                <textarea id="others-view" name="others-view"></textarea>
-              </div>
-            </div>
-          </section>
 
-          <!-- 섹션 7. 상담/코칭 방식 선호도 -->
-          <section class="section" aria-label="상담 코칭 방식 선호도">
-            <div class="section-title">
-              <div class="section-title-left">
-                <div class="section-index">7</div>
-                <h2>상담/코칭 방식 선호도</h2>
-              </div>
-              <div class="section-caption">더 편안한 진행을 위한 참고 정보입니다.</div>
-            </div>
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P12-Q17</span>
+                    <label>점검(리포팅) 방식 선호</label>
+                  </div>
+                  <div class="option-group">
+                    <label class="option"><input type="radio" name="p12_reporting" value="before_session" /><span>세션 전 간단 공유</span></label>
+                    <label class="option"><input type="radio" name="p12_reporting" value="after_session" /><span>세션 후 요약/과제 정리</span></label>
+                    <label class="option"><input type="radio" name="p12_reporting" value="weekly_check" /><span>주 1회 간단 체크</span></label>
+                    <label class="option"><input type="radio" name="p12_reporting" value="none" /><span>필요 없음</span></label>
+                  </div>
+                </div>
 
-            <div class="field-group">
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q24.</span>
-                  <label>상담/코칭을 받을 때 더 편하다고 느끼는 방식을 선택해 주세요.</label>
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P12-Q18</span>
+                    <label for="p12_avoid">코칭에서 다루기 싫은 주제/방식(선택)</label>
+                  </div>
+                  <textarea id="p12_avoid" name="p12_avoid" placeholder="없으면 비워도 됩니다."></textarea>
                 </div>
-                <div class="option-group">
-                  <label class="option">
-                    <input type="radio" name="format" value="offline" />
-                    <span>대면(오프라인)</span>
-                  </label>
-                  <label class="option">
-                    <input type="radio" name="format" value="online" />
-                    <span>온라인(화상)</span>
-                  </label>
-                  <label class="option">
-                    <input type="radio" name="format" value="both" />
-                    <span>둘 다 괜찮다</span>
-                  </label>
+              </div>
+            </section>
+
+            <section class="section" aria-label="12회기 안전 확인">
+              <div class="section-title">
+                <div class="section-title-left">
+                  <div class="section-index">10</div>
+                  <h2>안전 확인</h2>
                 </div>
+                <div class="section-caption">안전한 진행을 위한 최소 확인입니다.</div>
               </div>
 
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q25.</span>
-                  <label>상담/코칭 대화의 분위기에 대해 원하는 스타일에 체크해 주세요.</label>
+              <div class="field-group">
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P12-Q19</span>
+                    <label>현재 상태에 가장 가까운 것을 선택해 주세요.</label>
+                  </div>
+                  <div class="option-group">
+                    <label class="option"><input type="radio" name="p12_safety" value="crisis" /><span>지금은 위기라 전문적인 즉각 도움이 필요하다고 느낀다</span></label>
+                    <label class="option"><input type="radio" name="p12_safety" value="support" /><span>위기는 아니지만 심리적 지원이 필요하다고 느낀다</span></label>
+                    <label class="option"><input type="radio" name="p12_safety" value="ok" /><span>특별한 위기는 없다</span></label>
+                  </div>
                 </div>
-                <p class="help">복수 선택 가능</p>
-                <div class="option-group">
-                  <label class="option">
-                    <input type="checkbox" name="style" value="warm" />
-                    <span>편안하고 따뜻한 분위기</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="style" value="calm" />
-                    <span>차분하고 진지한 분위기</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="style" value="direct" />
-                    <span>직설적이고 솔직한 피드백</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="style" value="question-centered" />
-                    <span>질문 중심으로 스스로 답을 찾게 해주는 방식</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="style" value="task" />
-                    <span>과제나 실천 계획을 함께 세우는 방식</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="style" value="unsure" />
-                    <span>잘 모르겠다, 상담자/코치에게 맡기겠다</span>
-                  </label>
-                </div>
-              </div>
 
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q26.</span>
-                  <label for="avoid-topics">
-                    상담/코칭 과정에서 절대 다루고 싶지 않은 주제가 있다면 적어 주세요.
-                  </label>
-                </div>
-                <p class="help">없으면 ‘없음’이라고 적어 주세요.</p>
-                <textarea id="avoid-topics" name="avoid-topics"></textarea>
-              </div>
-            </div>
-          </section>
-
-          <!-- 섹션 8. 건강/정신건강 & 안전 관련 -->
-          <section class="section" aria-label="건강과 정신건강 및 안전 관련">
-            <div class="section-title">
-              <div class="section-title-left">
-                <div class="section-index">8</div>
-                <h2>건강/정신건강 &amp; 안전 관련</h2>
-              </div>
-              <div class="section-caption">내담자의 안전을 위한 최소한의 확인 문항입니다.</div>
-            </div>
-
-            <div class="field-group">
-              <div class="field">
-                <div class="subsection-note">
-                  <span class="subsection-note-icon">!</span>
-                  <span>
-                    편하신 범위 안에서만 답변해 주세요. 필요한 경우, 추가적인 도움을 함께 논의할 수 있습니다.
-                  </span>
+                <div class="field">
+                  <div class="label-row">
+                    <span class="q-number">P12-Q20</span>
+                    <label>현재 전문기관의 도움을 받고 있나요? (선택)</label>
+                  </div>
+                  <p class="help">세부 내용은 적지 않아도 됩니다. 진행 조율을 위한 참고용입니다.</p>
+                  <div class="option-group">
+                    <label class="option"><input type="radio" name="p12_prof_support" value="yes" /><span>예</span></label>
+                    <label class="option"><input type="radio" name="p12_prof_support" value="no" /><span>아니오</span></label>
+                  </div>
                 </div>
               </div>
-
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q27.</span>
-                  <label>현재 정신과/정신건강의학과, 심리상담센터, 기타 치료기관에서 진료나 상담을 받고 있는 중인가요?</label>
-                </div>
-                <div class="option-group">
-                  <label class="option">
-                    <input type="radio" name="current-treatment" value="yes" />
-                    <span>예</span>
-                  </label>
-                  <label class="option">
-                    <input type="radio" name="current-treatment" value="no" />
-                    <span>아니오</span>
-                  </label>
-                </div>
-              </div>
-
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q28.</span>
-                  <label for="current-treatment-detail">
-                    (선택) Q27에서 “예”를 선택하신 분만 작성해 주세요. 어떤 곳에서 어떤 이유로 도움을 받고 있는지, 편한 만큼만 적어 주세요.
-                  </label>
-                </div>
-                <textarea id="current-treatment-detail" name="current-treatment-detail" placeholder="해당되는 경우에만 적어 주세요."></textarea>
-              </div>
-
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q29.</span>
-                  <label>현재 복용 중인 정신과 약물(우울, 불안, 수면 등 관련 약)이 있나요?</label>
-                </div>
-                <div class="option-group">
-                  <label class="option">
-                    <input type="radio" name="medication" value="yes" />
-                    <span>예</span>
-                  </label>
-                  <label class="option">
-                    <input type="radio" name="medication" value="no" />
-                    <span>아니오</span>
-                  </label>
-                  <label class="option">
-                    <input type="radio" name="medication" value="unknown" />
-                    <span>잘 모르겠다</span>
-                  </label>
-                </div>
-              </div>
-
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q30.</span>
-                  <label>최근 2주 동안, 아래와 같은 생각이나 충동이 있었는지 체크해 주세요.</label>
-                </div>
-                <div class="option-group">
-                  <label class="option">
-                    <input type="checkbox" name="suicidal-thoughts" value="quit-everything" />
-                    <span>너무 힘들어서 모든 걸 그만두고 싶다는 생각이 든 적이 있다</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="suicidal-thoughts" value="self-harm" />
-                    <span>스스로를 해치고 싶다는 구체적인 생각이 든 적이 있다</span>
-                  </label>
-                  <label class="option">
-                    <input type="checkbox" name="suicidal-thoughts" value="none" />
-                    <span>그런 생각은 거의/전혀 없었다</span>
-                  </label>
-                </div>
-              </div>
-
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q31.</span>
-                  <label for="suicidal-detail">
-                    (선택) Q30에서 위 두 항목(“그만두고 싶다”, “스스로를 해치고 싶다”) 중 하나라도 체크하신 분만 작성해 주세요. 가능한 범위에서, 지금의 상태와 구체적인 생각을 적어 주세요.
-                  </label>
-                </div>
-                <textarea id="suicidal-detail" name="suicidal-detail" placeholder="해당되는 경우에만 적어 주세요."></textarea>
-              </div>
-            </div>
-          </section>
-
-          <!-- 섹션 9. 기대, 걱정, 기타 -->
-          <section class="section" aria-label="기대와 걱정 및 기타 의견">
-            <div class="section-title">
-              <div class="section-title-left">
-                <div class="section-index">9</div>
-                <h2>기대, 걱정 &amp; 기타 하고 싶은 말</h2>
-              </div>
-              <div class="section-caption">함께 잘 걷기 위해, 마지막으로 남기고 싶은 말이 있다면.</div>
-            </div>
-
-            <div class="field-group">
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q32.</span>
-                  <label for="expectations">
-                    이번 상담/코칭에 대해 기대되는 점이 있다면 적어 주세요.
-                  </label>
-                </div>
-                <textarea id="expectations" name="expectations"></textarea>
-              </div>
-
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q33.</span>
-                  <label for="worries">
-                    상담/코칭을 시작하면서 걱정되거나 염려되는 점이 있다면 적어 주세요.
-                  </label>
-                </div>
-                <textarea id="worries" name="worries"></textarea>
-              </div>
-
-              <div class="field">
-                <div class="label-row">
-                  <span class="q-number">Q34.</span>
-                  <label for="other-message">
-                    상담자/코치가 미리 알고 있으면 좋겠다고 생각하는 내용이 있다면 자유롭게 적어 주세요.
-                  </label>
-                </div>
-                <textarea id="other-message" name="other-message"></textarea>
-              </div>
-            </div>
-          </section>
+            </section>
+          </div>
 
           <div class="footer-note">
             <strong>※ 안내</strong><br />
-            이 설문지는 상담·코칭을 더 안전하고 효과적으로 돕기 위한 기초자료입니다.
-            작성 후에도 언제든지 “이 부분은 다루고 싶지 않다”고 말씀하실 수 있으며,
-            원하실 경우 설문 내용의 열람·수정·삭제를 요청하실 수 있습니다.
+            이 설문은 코칭을 더 명확하고 효과적으로 진행하기 위한 기초자료입니다.
+            작성 후에도 언제든지 “이 부분은 다루고 싶지 않다”고 말씀하실 수 있습니다.
+            <br /><br />
+            <strong>안전 관련</strong><br />
+            긴급한 위험이 느껴지는 경우에는 코칭보다 안전 확보가 우선입니다. 즉시 112/119 등 지역 긴급 지원을 이용해 주세요.
           </div>
 
           <div class="actions">
-            <button type="submit" class="btn-primary">
+            <button type="submit" class="btn-primary" id="submitBtn">
               <span class="icon">✨</span>
-              <span>초기 설문지 제출하기</span>
+              <span>코칭 사전 설문 제출하기</span>
             </button>
-            <div class="btn-secondary">
+            <div class="btn-secondary" aria-label="비밀 보장 안내">
               <span class="icon">🔒</span>
               <span>모든 응답은 비밀이 보장됩니다.</span>
             </div>
@@ -1182,5 +992,219 @@
       </div>
     </div>
   </div>
+
+  <script>
+  (() => {
+    const form = document.getElementById('intakeForm');
+    if (!form) return;
+
+    const endpoint = form.dataset.endpoint; // Apps Script Web App URL
+    const DRAFT_KEY = 'coaching_intake_branch_draft_v1';
+    const SUBMIT_LOCK_KEY = 'coaching_intake_branch_submit_lock_v1';
+
+    const $ = (sel) => document.querySelector(sel);
+    const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+    const show = (el) => { if (el) el.classList.remove('is-hidden'); };
+    const hide = (el) => { if (el) el.classList.add('is-hidden'); };
+
+    const setMeta = () => {
+      const now = new Date();
+      $('#timestamp').value = now.toISOString();
+      $('#page_url').value = location.href;
+      $('#submission_id').value = `${now.getTime()}-${Math.random().toString(16).slice(2)}`;
+    };
+
+    const disableAllInputs = (root, disabled) => {
+      if (!root) return;
+      const els = root.querySelectorAll('input, textarea, select, button');
+      els.forEach(el => {
+        if (el.id === 'submitBtn') return;
+        el.disabled = disabled;
+      });
+    };
+
+    const getProgramChoice = () => {
+      const checked = document.querySelector('input[type="radio"][name="program_choice"]:checked');
+      return checked ? checked.value : '';
+    };
+
+    const toggleOther = (toggleId, targetId) => {
+      const t = document.getElementById(toggleId);
+      const target = document.getElementById(targetId);
+      if (!t || !target) return;
+
+      const update = () => {
+        if (t.checked) {
+          target.classList.remove('is-hidden');
+          target.disabled = false;
+        } else {
+          target.classList.add('is-hidden');
+          target.value = '';
+          target.disabled = true;
+        }
+      };
+      update();
+      t.addEventListener('change', update);
+    };
+
+    toggleOther('p4_obstacles_other_toggle', 'p4_obstacles_other');
+    toggleOther('p12_patterns_other_toggle', 'p12_patterns_other');
+    toggleOther('p12_environment_other_toggle', 'p12_environment_other');
+    toggleOther('p12_resources_other_toggle', 'p12_resources_other');
+
+    const program4 = document.getElementById('program4');
+    const program12 = document.getElementById('program12');
+    const chooseNotice = document.getElementById('chooseProgramNotice');
+
+    const applyProgram = (choice) => {
+      $('#program_type').value = choice || '';
+      if (!choice) {
+        hide(program4); hide(program12);
+        show(chooseNotice);
+        disableAllInputs(program4, true);
+        disableAllInputs(program12, true);
+        return;
+      }
+
+      hide(chooseNotice);
+      if (choice === '4') {
+        show(program4); hide(program12);
+        disableAllInputs(program4, false);
+        disableAllInputs(program12, true);
+      } else if (choice === '12') {
+        show(program12); hide(program4);
+        disableAllInputs(program12, false);
+        disableAllInputs(program4, true);
+      }
+    };
+
+    applyProgram(getProgramChoice());
+
+    form.addEventListener('change', (e) => {
+      const t = e.target;
+      if (!t) return;
+      if (t.name === 'program_choice') {
+        applyProgram(getProgramChoice());
+        saveDraft();
+      }
+    });
+
+    const saveDraft = () => {
+      const fd = new FormData(form);
+      const obj = {};
+      for (const [k, v] of fd.entries()) {
+        if (k === 'timestamp' || k === 'submission_id' || k === 'page_url') continue;
+        if (obj[k] === undefined) obj[k] = v;
+        else if (Array.isArray(obj[k])) obj[k].push(v);
+        else obj[k] = [obj[k], v];
+      }
+      localStorage.setItem(DRAFT_KEY, JSON.stringify(obj));
+    };
+
+    const restoreDraft = () => {
+      const raw = localStorage.getItem(DRAFT_KEY);
+      if (!raw) return;
+      let obj;
+      try { obj = JSON.parse(raw); } catch { return; }
+
+      const pc = obj['program_choice'];
+      if (pc) {
+        const r = document.querySelector(`input[type="radio"][name="program_choice"][value="${pc}"]`);
+        if (r) r.checked = true;
+      }
+      applyProgram(getProgramChoice());
+
+      for (const [k, v] of Object.entries(obj)) {
+        if (document.querySelector(`input[type="radio"][name="${k}"]`)) {
+          $$(`input[type="radio"][name="${k}"]`).forEach(r => r.checked = (r.value === v));
+          continue;
+        }
+        if (document.querySelector(`input[type="checkbox"][name="${k}"]`)) {
+          const values = Array.isArray(v) ? v : [v];
+          $$(`input[type="checkbox"][name="${k}"]`).forEach(c => c.checked = values.includes(c.value));
+          continue;
+        }
+        const el = document.querySelector(`[name="${k}"]`);
+        if (el && typeof v === 'string') el.value = v;
+      }
+
+      ['p4_obstacles_other_toggle','p12_patterns_other_toggle','p12_environment_other_toggle','p12_resources_other_toggle']
+        .forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.dispatchEvent(new Event('change'));
+        });
+    };
+
+    restoreDraft();
+
+    let tmr = null;
+    form.addEventListener('input', () => {
+      if (tmr) clearTimeout(tmr);
+      tmr = setTimeout(saveDraft, 250);
+    });
+
+    const lockSubmit = (sid) => localStorage.setItem(SUBMIT_LOCK_KEY, sid);
+    const isLocked = (sid) => localStorage.getItem(SUBMIT_LOCK_KEY) === sid;
+
+    const minimalValidate = () => {
+      const program = getProgramChoice();
+      if (!program) {
+        alert('상단에서 4회기 또는 12회기를 먼저 선택해 주세요.');
+        return false;
+      }
+      return true;
+    };
+
+    const showSuccess = () => {
+      document.body.innerHTML = `
+        <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:#f9fafb;color:#111827;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic',sans-serif">
+          <div style="max-width:640px;width:100%;background:#fff;border:1px solid #e5e7eb;border-radius:18px;padding:18px 16px;box-shadow:0 14px 35px rgba(15,23,42,.12)">
+            <h1 style="margin:0 0 10px;font-size:1.2rem">제출이 완료되었습니다.</h1>
+            <p style="margin:0 0 14px;color:#6b7280;line-height:1.6">
+              작성해 주신 내용은 코칭 준비를 위해 사용됩니다. 감사합니다.
+            </p>
+            <button onclick="location.reload()" style="border:none;border-radius:999px;padding:10px 14px;font-weight:800;background:linear-gradient(135deg,#2563eb,#8b5cf6);color:#f9fafb;cursor:pointer;width:100%">
+              새 설문 작성하기
+            </button>
+          </div>
+        </div>`;
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!minimalValidate()) return;
+
+      if (!endpoint || endpoint.includes('YOUR_APPS_SCRIPT_WEBAPP_URL')) {
+        alert('Apps Script 웹앱 URL이 설정되지 않았습니다.\nform 태그의 data-endpoint 값을 확인해 주세요.');
+        return;
+      }
+
+      setMeta();
+      const sid = $('#submission_id').value;
+
+      if (isLocked(sid)) {
+        alert('이미 제출 처리된 응답입니다.');
+        return;
+      }
+
+      const btn = document.getElementById('submitBtn');
+      const btnHTML = btn ? btn.innerHTML : '';
+      if (btn) { btn.disabled = true; btn.innerHTML = '제출 중...'; }
+
+      try {
+        const body = new URLSearchParams(new FormData(form));
+        await fetch(endpoint, { method: 'POST', mode: 'no-cors', body });
+
+        lockSubmit(sid);
+        localStorage.removeItem(DRAFT_KEY);
+        showSuccess();
+      } catch (err) {
+        alert('제출 중 오류가 발생했습니다.\n네트워크 상태를 확인 후 다시 시도해 주세요.');
+        if (btn) { btn.disabled = false; btn.innerHTML = btnHTML; }
+      }
+    });
+  })();
+  </script>
 </body>
 </html>
